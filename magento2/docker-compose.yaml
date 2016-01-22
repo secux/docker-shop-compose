@@ -1,0 +1,22 @@
+manager:
+  image: secupay/docker-shop-manager:latest
+  links:
+    - mysql
+  volumes_from:
+    - shop
+  expose:
+    - 80
+  ports:
+    - "6080:80"
+
+shop:
+  image: secupay/docker-shop-magento2
+  volumes:
+    - /data
+
+mysql:
+  image: mysql:5.6
+  expose:
+    - 3306
+  environment:
+    - MYSQL_ROOT_PASSWORD=verysecret
