@@ -12,14 +12,14 @@ manager:
     - /www
 
 shop:
-  image: secupay/docker-shop-magento2
+  image: secupay/docker-shop-woocommerce2
   volumes:
     - /data
 
 web:
-  build: ./webserver/nginx # or apache-php or apache-fcgi
+  build: ./webserver/httpd # or apache-php or apache-fcgi
   links:
-    - phpfpm
+    - phpapache
   volumes_from:
     - manager
   #volumes:
@@ -31,8 +31,8 @@ web:
     - "6090:80"
     - "6091:443"
 
-phpfpm:
-  image: php:5-fpm
+phpapache:
+  image: php:5-apache
   links:
     - mysql
   volumes_from:
