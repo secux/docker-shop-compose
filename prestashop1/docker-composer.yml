@@ -19,7 +19,7 @@ shop:
 web:
   build: ./webserver/httpd # or apache-php or apache-fcgi
   links:
-    - phpapache
+    - php
   volumes_from:
     - manager
   #volumes:
@@ -31,8 +31,8 @@ web:
     - "6090:80"
     - "6091:443"
 
-phpapache:
-  image: php:5-apache
+php:
+  image: php:5-fpm
   links:
     - mysql
   volumes_from:
