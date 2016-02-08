@@ -17,11 +17,12 @@ shop:
     - /data
 
 web:
-  build: ./webserver/httpd # or apache-php or apache-fcgi
+  build: ./webserver/nginx # or apache-php or apache-fcgi
   links:
     - phpfpm
   volumes_from:
     - manager
+  env_file: ../token.env
   #volumes:
   #  - ./etc/apache:/etc/apache
   expose:
