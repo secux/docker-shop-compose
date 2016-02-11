@@ -1,5 +1,6 @@
 manager:
   image: secupay/docker-shop-manager:latest
+  # build: /var/www/docker-shop-manager
   links:
     - mysql
   volumes_from:
@@ -13,6 +14,7 @@ manager:
 
 shop:
   image: secupay/docker-shop-magento2
+  # build: /var/www/docker-shop-magento2
   volumes:
     - /data
 

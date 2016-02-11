@@ -1,5 +1,6 @@
 manager:
   image: secupay/docker-shop-manager:latest
+  # build: /var/www/docker-shop-manager
   links:
     - mysql
   volumes_from:
@@ -13,11 +14,12 @@ manager:
 
 shop:
   image: secupay/docker-shop-oxid4
+  # build: /var/www/docker-shop-oxid4
   volumes:
     - /data
 
 web:
-  build: ./webserver/httpd # or apache-php or apache-fcgi
+  build: ./webserver/nginx # or apache-php or apache-fcgi
   links:
     - phpfpm
   volumes_from:
