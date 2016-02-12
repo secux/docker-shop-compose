@@ -24,7 +24,6 @@ web:
     - phpfpm
   volumes_from:
     - manager
-  env_file: ../token.env
   #volumes:
   #  - ./etc/apache:/etc/apache
   expose:
