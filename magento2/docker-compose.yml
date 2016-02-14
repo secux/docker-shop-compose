@@ -19,7 +19,7 @@ shop:
     - /data
 
 web:
-  build: ./webserver/nginx # or apache-php or apache-fcgi
+  image: secupay/nginx-default # or httpd:latest
   links:
     - phpfpm
   volumes_from:
