@@ -35,6 +35,7 @@ web:
 
 phpfpm:
   image: php:5-fpm
+  build: ./php
   links:
     - mysql
   volumes_from:

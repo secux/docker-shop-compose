@@ -21,3 +21,4 @@ One check on the same page says the extension is installed, the other says it is
 
 5. Prestashop1 similar issue "Database Server is not found. Please verify the login, password and server fields (DbPDO)"
 
+6. Shopware5 Seems to have some issue with the DirectoryIndex / .htaccess file, not sure
