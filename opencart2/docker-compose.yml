@@ -1,5 +1,6 @@
 manager:
   image: secupay/docker-shop-manager:latest
+  # build: /var/www/docker-shop-manager
   links:
     - mysql
   volumes_from:
@@ -13,6 +14,7 @@ manager:
 
 shop:
   image: secupay/docker-shop-opencart2
+  # build: /var/www/docker-shop-opencart2
   volumes:
     - /data
 
@@ -20,9 +22,9 @@ web:
   build: ./webserver/nginx # or apache-php or apache-fcgi
   links:
     - phpfpm
+    - mysql
   volumes_from:
     - manager
-  env_file: ../token.env
   #volumes:
   #  - ./etc/apache:/etc/apache
   expose:
@@ -33,7 +35,8 @@ web:
     - "6091:443"
 
 phpfpm:
-  image: php:5-fpm
+  # image: php:5-fpm
+  build: ./php
   links:
     - mysql
   volumes_from:
@@ -47,4 +50,7 @@ mysql:
   expose:
     - 3306
   environment:
-    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_ROOT_PASSWORD=secu
+    - MYSQL_DATABASE=secu
+    - MYSQL_USER=secu
+    - MYSQL_PASSWORD=secu
