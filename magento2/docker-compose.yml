@@ -48,4 +48,7 @@ mysql:
   expose:
     - 3306
   environment:
-    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_ROOT_PASSWORD=secu
+    - MYSQL_DATABASE=secu
+    - MYSQL_USER=secu
+    - MYSQL_PASSWORD=secu
