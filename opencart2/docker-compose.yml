@@ -17,6 +17,7 @@ shop:
   # build: /var/www/docker-shop-opencart2
   volumes:
     - /data
+    - /config
 
 web:
   build: ./webserver/nginx # or apache-php or apache-fcgi
