@@ -1,6 +1,6 @@
 manager:
-  # image: secupay/docker-shop-manager:latest
-  build: /var/www/docker-shop-manager
+  image: secupay/docker-shop-manager:latest
+  # build: /var/www/docker-shop-manager
   links:
     - mysql
   volumes_from:
@@ -13,8 +13,8 @@ manager:
     - /www
 
 shop:
-  # image: secupay/docker-shop-xtcommerce4
-  build: /var/www/docker-shop-xtcommerce4
+  image: secupay/docker-shop-xtcommerce4
+  # build: /var/www/docker-shop-xtcommerce4
   volumes:
     - /data
 
