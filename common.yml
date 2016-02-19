@@ -1,0 +1,35 @@
+manager:
+  image: secupay/docker-shop-manager:latest
+  # build: /var/www/docker-shop-manager
+  expose:
+    - 80
+  ports:
+    - "6080:80"
+  volumes:
+    - /www
+  env_file:
+    - credentials.env
+
+nginx:
+  image: secupay/nginx-default # or httpd:latest
+  expose:
+    - 80
+    - 443
+  ports:
+    - "6090:80"
+    - "6091:443"
+
+phpfpm:
+  image: secupay/php-fpm
+  expose:
+    - 9000
+
+mysql:
+  image: mysql:5.6
+  expose:
+    - 3306
+  environment:
+    - MYSQL_ROOT_PASSWORD=secu
+    - MYSQL_DATABASE=secu
+    - MYSQL_USER=secu
+    - MYSQL_PASSWORD=secu
