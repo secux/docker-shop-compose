@@ -24,3 +24,14 @@ One check on the same page says the extension is installed, the other says it is
 6. Shopware5 Seems to have some issue with the DirectoryIndex / .htaccess file, not sure
 
 7. XtCommerce, almost finished but same problem with mysql as the others
+
+
+Magento2 - works (not auth not mysql)
+Opencart2 - works (not mysql)
+Oscommerce2 - works (not mysql)
+Oscommerce3 - works (not mysql)
+Oxid4 - wrong dir index?
+Prestashop1 - works (not mysql)
+Shopware5 - wrong dir index or something wrong with autoload.php same as magento?
+Woocommerce2 - not built
+Xtcommerce4 - works (not mysql)

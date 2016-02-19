@@ -34,7 +34,7 @@ web:
     - "6091:443"
 
 phpfpm:
-  image: php:5-fpm
+  # image: php:5-fpm
   build: ./php
   links:
     - mysql
