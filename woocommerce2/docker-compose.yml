@@ -1,52 +1,34 @@
-manager:
-  image: secupay/docker-shop-manager:latest
-  links:
-    - mysql
-  volumes_from:
-    - shop
-  expose:
-    - 80
-  ports:
-    - "6080:80"
-  volumes:
-    - /www
-
 shop:
   image: secupay/docker-shop-woocommerce2
-  volumes:
-    - /data
+
+manager:
+  extends:
+    file: ../common.yml
+    service: manager
+  links:
+    - database
+  volumes_from:
+    - shop
 
 web:
-  build: ./webserver/httpd # or apache-php or apache-fcgi
+  extends:
+    file: ../common.yml
+    service: nginx
   links:
     - phpfpm
   volumes_from:
     - manager
-  #volumes:
-  #  - ./etc/apache:/etc/apache
-  expose:
-    - 80
-    - 443
-  ports:
-    - "6090:80"
-    - "6091:443"
 
 phpfpm:
-  image: php:5-fpm
+  extends:
+    file: ../common.yml
+    service: phpfpm
   links:
-    - mysql
+    - database
   volumes_from:
     - manager
-  expose:
-    - 9000
-  #command: sh /usr/local/etc/run.sh
 
-mysql:
-  image: mysql:5.6
-  expose:
-    - 3306
-  environment:
-    - MYSQL_ROOT_PASSWORD=secu
-    - MYSQL_DATABASE=secu
-    - MYSQL_USER=secu
-    - MYSQL_PASSWORD=secu
+database:
+  extends:
+    file: ../common.yml
+    service: mysql

@@ -1,0 +1,55 @@
+manager:
+  image: secupay/docker-shop-manager:latest
+  # build: /var/www/docker-shop-manager
+  links:
+    - mysql
+  volumes_from:
+    - shop
+  expose:
+    - 80
+  ports:
+    - "6080:80"
+  volumes:
+    - /www
+
+shop:
+  image: secupay/docker-shop-<shop name>
+  # build: /var/www/docker-shop-<shop name>
+  volumes:
+    - /data
+
+web:
+  build: ./webserver/nginx # or apache-php or apache-fcgi
+  links:
+    - phpfpm
+  volumes_from:
+    - manager
+  #volumes:
+  #  - ./etc/apache:/etc/apache
+  expose:
+    - 80
+    - 443
+  ports:
+    - "6090:80"
+    - "6091:443"
+
+phpfpm:
+  # image: php:5-fpm
+  build: ./php
+  links:
+    - mysql
+  volumes_from:
+    - manager
+  expose:
+    - 9000
+  #command: sh /usr/local/etc/run.sh
+
+mysql:
+  image: mysql:5.6
+  expose:
+    - 3306
+  environment:
+    - MYSQL_ROOT_PASSWORD=secu
+    - MYSQL_DATABASE=secu
+    - MYSQL_USER=secu
+    - MYSQL_PASSWORD=secu
