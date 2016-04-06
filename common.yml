@@ -12,6 +12,7 @@ manager:
 
 nginx:
   image: secupay/nginx-default # or httpd:latest
+  # build: /home/decemvre/docker/secuDocker/nginx-default # or httpd:latest
   expose:
     - 80
     - 443
