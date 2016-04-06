@@ -1,5 +1,6 @@
 shop:
   image: secupay/docker-shop-magento2
+  # build: /home/decemvre/docker/secuDocker/docker-shop-magento2
 
 manager:
   extends:
