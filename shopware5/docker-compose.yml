@@ -1,5 +1,6 @@
 shop:
   image: secupay/docker-shop-shopware5
+  # build: /home/decemvre/docker/secuDocker/docker-shop-shopware5
 
 manager:
   extends:
