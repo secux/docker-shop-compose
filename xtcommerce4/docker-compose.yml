@@ -1,6 +1,6 @@
 shop:
-  # image: secupay/docker-shop-xtcommerce4
-  build: /home/decemvre/docker/secuDocker/docker-shop-xtcommerce4
+  image: secupay/docker-shop-xtcommerce4
+  # build: /home/decemvre/docker/secuDocker/docker-shop-xtcommerce4
 
 manager:
   extends:

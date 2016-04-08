@@ -1,6 +1,6 @@
 manager:
-  # image: secupay/docker-shop-manager:latest
-  build: /home/decemvre/docker/secuDocker/docker-shop-manager
+  image: secupay/docker-shop-manager:latest
+  # build: /home/decemvre/docker/secuDocker/docker-shop-manager
   expose:
     - 80
   ports:
@@ -11,8 +11,8 @@ manager:
     - credentials.env
 
 nginx:
-  # image: secupay/nginx-default # or httpd:latest
-  build: /home/decemvre/docker/secuDocker/nginx-default # or httpd:latest
+  image: secupay/nginx-default # or httpd:latest
+  # build: /home/decemvre/docker/secuDocker/nginx-default # or httpd:latest
   expose:
     - 80
     - 443
@@ -21,8 +21,8 @@ nginx:
     - "6091:443"
 
 phpfpm:
-  # image: secupay/php-fpm
-  build: /home/decemvre/docker/secuDocker/docker-php-fpm
+  image: secupay/php-fpm
+  # build: /home/decemvre/docker/secuDocker/docker-php-fpm
   expose:
     - 9000
 
