@@ -1,5 +1,9 @@
 # Dynamic docker testing infrastructure for online shops
 
+This repository contains the docker-compose.yml files and the credentials for the entire infrastructure which is split into several docker images for each individual shop
+
+Below you will find a table containing the current status of each individual image along with the installation guidelines
+
 ## Current status table
 
 | Shop         	| Status            	| Last check 	| Known Issues                                                                                   	|
@@ -21,5 +25,8 @@
 
 
 ## Installation
+
+Under construction
+
 
 !IMPORTANT use "database" instead of localhost during installation
