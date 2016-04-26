@@ -28,9 +28,9 @@ Below you will find a table containing the current status of each individual ima
 
 1. Verify docker and docker-compose installation
 
-	...`docker info`
-	...`docker-compose version`
-	
+	⋅⋅⋅`docker info`  
+	⋅⋅⋅`docker-compose version`  
+
 2.
 3.
 4.
