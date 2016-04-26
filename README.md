@@ -26,16 +26,21 @@ Below you will find a table containing the current status of each individual ima
 
 ## Installation
 
-1. Verify docker and docker-compose installation
+1. Verify docker and docker-compose installation by running the following
 
-	⋅⋅⋅`docker info`  
-	⋅⋅⋅`docker-compose version`  
+	`docker info`  
+	`docker-compose version`  
 
 2.
+
 3.
+
 4.
+
 5.
+
 6.
+
 7.
 
 
