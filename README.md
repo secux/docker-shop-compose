@@ -26,14 +26,14 @@ Below you will find a table containing the current status of each individual ima
 
 ## Installation
 
-1. Verify docker and docker-compose installation by running the following
+1. Verify docker and docker-compose installation by running the following commands after connecting to the EC2 instance
 
 	`docker info`  
 	`docker-compose version`  
 
-2.
+2. `docker-compose up`
 
-3.
+3. 
 
 4.
 
@@ -45,3 +45,4 @@ Below you will find a table containing the current status of each individual ima
 
 
 !IMPORTANT use "database" instead of localhost during installation
+!IMPORTANT TAKE HOSTNAME DYNAMICALLY DURING INSTALLATION FOR SHOP INSTALL ON AWS
