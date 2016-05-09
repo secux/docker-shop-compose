@@ -38,7 +38,7 @@ https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2
 
 5. "Step 5: Tag Instance" -> "Step 6: Configure Security Group"
 
-6. "Step 6: Configure Security Group" pick 'Select an existing security group' from the radio input and then check Name: webserver from the list below, to allow http, https and ssh, and finally click on "Review and Launch"
+6. "Step 6: Configure Security Group" pick 'Select an existing security group' from the radio input and then check Name: dockerAllowAll from the list below, to allow http, https and ssh, as well as 6080 and 6090 ports and finally click on "Review and Launch"
 
 7. "Step 7: Review Instance Launch" >> "Launch"
 
@@ -55,6 +55,22 @@ https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2
 11. Run "ls -la" and then "cd" into docker-shop-compose and then again into the folder of the shop you wish to install. Once there make sure that the docker-compose.yml file is presend and run "docker-compose up", while in that same folder.
 
 12. 
+
+... Under construction.
+
+_________________________________________________
+
+readme.md -> table with status, etc
+
++ separate changelog
+
++ test if all the shops are working on amazon, OWN AMI -> default docker, continue continue continue, (don't change ssh key), check if this is working for the shops
++ short explanation for each shop, how to install each one, default settings, etc, login and start any instance -> quality; set up a shop in 3 minutes! usable shop after installation
+
+++ cosmetics!!
+
+++ documentation.
+
 
 
 !IMPORTANT use "database" instead of localhost during installation
