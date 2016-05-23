@@ -8,12 +8,12 @@ Below you will find a table containing the current status of each individual ima
 
 | Shop         	| Status            	| Last check 	| Known Issues                                                                                   	|
 |--------------	|-------------------	|------------	|------------------------------------------------------------------------------------------------	|
-| Magento2     	| **works**             | 05.04.2016 	| -                                                                                              	|
-| Opencart2    	| **works**             | 05.04.2016 	| -                                                                                              	|
-| Oscommerce2  	| **works**             | 05.04.2016 	| -                                                                                              	|
-| Oscommerce3  	| **works**             | 05.04.2016 	| -                                                                                              	|
-| Oxid4        	| **works**             | 05.04.2016 	| -                                                                                              	|
-| Prestashop1  	| **works**             | 05.04.2016 	| -                                                                                              	|
+| Magento2     	| **works**             | 23.05.2016 	| -                                                                                              	|
+| Opencart2    	| **works**             | 23.05.2016 	| -                                                                                              	|
+| Oscommerce2  	| **works**             | 23.05.2016 	| -                                                                                              	|
+| Oscommerce3  	| **works**             | 23.05.2016 	| -                                                                                              	|
+| Oxid4        	| does not work         | 23.05.2016 	| mod_rewrite module issue                                                                          |
+| Prestashop1  	| **works**             | 23.05.2016 	| -                                                                                              	|
 | Shopware5    	| works				 	| 05.04.2016 	| Install.sql file is missing on the repo being cloned                                           	|
 | Woocommerce2 	| not yet built         | 05.04.2016 	| -                                                                                              	|
 | JTL3         	| not yet built         | 05.04.2016 	| only 1 version in the repo                                                                     	|
