@@ -21,10 +21,8 @@ Below you will find a table containing the current status of each individual ima
 | Xtcommerce4  	| works				 	| 05.04.2016 	| Static assets and some files fail to load; inserting demo data fails on 2 of the shop versions 	|
 
 
+## First time Installation
 
-
-
-## Installation
 0. Login to and open the EC2 dashboard/console at aws.amazon.com, U.S. West, Oregon and under "Create Instance" click on "Launch Instance"
 https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2
 
@@ -44,34 +42,41 @@ https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2
 
 8. Select an existing key pair (one which has already been added to the list of ssh keys which can connect to the instance, contact Nicolas if you don't have a key yet) and click "Launch Instances"
 
-9. Return to the Instances Dashboard and wait for the Instance to start and initialize. Once the Status Checks have passed select the instance by checking the checkbox to the left and at the top click on "Connect". Copy / Paste the address of your instance to your clipboard, eg: ec2-52-39-104-71.us-west-2.compute.amazonaws.com and connect using ssh and the ec2-user, instead of root: ssh ec2-user@ec2-52-39-104-71.us-west-2.compute.amazonaws.com
-
+9. Return to the Instances Dashboard and wait for the Instance to start and initialize. Once the Status Checks have passed select the instance by checking the checkbox to the left and at the top click on "Connect" and follow the instructions there in order to connect. Copy / Paste the address of your instance to your clipboard, eg: ec2-52-39-104-71.us-west-2.compute.amazonaws.com and connect using ssh and the "ec2-user", instead of root: "ssh ec2-user@ec2-52-39-104-71.us-west-2.compute.amazonaws.com"
 
 10. Once connected, first verify docker and docker-compose installation by running the following commands after connecting to the EC2 instance
 
 	`docker info`  
 	`docker-compose version`  
 
-11. Run "ls -la" and then "cd" into docker-shop-compose and then again into the folder of the shop you wish to install. Once there make sure that the docker-compose.yml file is presend and run "docker-compose up", while in that same folder.
+11. Run "ls -la" and then "cd" into docker-shop-compose and then again into the folder of the shop you wish to install. Once there make sure that the docker-compose.yml file is presend and run "docker-compose up", while in that same folder. The "docker-compose up" will pull all the images and create the project container infrastructure.
 
-12. 
+12. Return to the Instances Dashboard and locate the Public IP of your instance, Copy - Paste it into your browser and attach the :6080 port to access the application manager: http://<public ip>:6080 and choose a shop version to instal from the list.
 
-... Under construction.
+13. After Installation is completed navigate to http:://<public ip>:6090 to access your new shop and proceed with shop installation.
 
-_________________________________________________
-
-readme.md -> table with status, etc
-
-+ separate changelog
-
-+ test if all the shops are working on amazon, OWN AMI -> default docker, continue continue continue, (don't change ssh key), check if this is working for the shops
-+ short explanation for each shop, how to install each one, default settings, etc, login and start any instance -> quality; set up a shop in 3 minutes! usable shop after installation
-
-++ cosmetics!!
-
-++ documentation.
+!IMPORTANT use "database" instead of localhost during manual shop installation
+!IMPORTANT Magento2 shop installs automatically
 
 
+## Working with an existing instance
 
-!IMPORTANT use "database" instead of localhost during installation
-!IMPORTANT TAKE HOSTNAME DYNAMICALLY DURING INSTALLATION FOR SHOP INSTALL ON AWS
+1. Connect to the instance using SSH as in the previous explanation
+
+2. The following commands allow you to work with the existing docker containers
+
+"docker ps" -> shows a list of running containers
+
+"docker ps -a" -> shows a list of all existing containers
+
+"docker images" -> shows a list of all local images
+
+"docker stop $(docker ps -q)" -> stops all running containers
+
+"docker rm $(docker ps -aq)" -> removes all existing containers
+
+3. "cd docker-shop-compose/<other shop folder>/"
+
+4. "docker-compose up"
+
+5. Repeat steps 12 and 13 from above.
