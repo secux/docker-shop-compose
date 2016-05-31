@@ -1,6 +1,6 @@
 shop:
   image: secupay/docker-shop-opencart2
-  # build: /var/www/docker-shop-opencart2
+  # build: /home/decemvre/docker/secuDocker/docker-shop-opencart2
 
 manager:
   extends:
@@ -19,6 +19,13 @@ web:
     - phpfpm
   volumes_from:
     - manager
+
+secuftp:
+  extends:
+    file: ../common.yml
+    service: vsftpd
+  volumes_from:
+    - phpfpm
 
 phpfpm:
   extends:

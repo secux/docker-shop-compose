@@ -20,6 +20,14 @@ nginx:
     - "6090:80"
     - "6091:443"
 
+vsftpd:
+  image: secupay/docker-vsftpd
+  # build: /home/decemvre/docker/secuDocker/docker-vsftpd
+  expose:
+    - 21
+  ports:
+    - "6070:21"
+
 phpfpm:
   image: secupay/php-fpm
   # build: /home/decemvre/docker/secuDocker/docker-php-fpm
